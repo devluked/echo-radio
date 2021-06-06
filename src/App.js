@@ -30,18 +30,13 @@ function ToggleStreamEpisodes() {
           <LiveDotText/>
         </div>
         <div className="streambtn">
-          <StreamPlayer recentEp={recentEp}/>
+        <StreamComponent title={"ALTERNATIVE HITS & GROOVY DEEP CUTS"} url={recentEp}/>
           {/* <button className="episodestogglebtn" onClick={toggleViewHandler}><h1 className="title">Episodes</h1></button> */}
         </div>
 
      </div>
     )
 }}
-
-function StreamPlayer(props) {
-  return (
-    <StreamComponent title={"ALTERNATIVE HITS & GROOVY DEEP CUTS"} url={props.recentEp}/>
-  )}
 
 
 export default App;
