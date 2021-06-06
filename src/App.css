@@ -1,78 +1,141 @@
 .App {
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
+	background-color: black;
+	height: 100vh;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
-html, body {
-  height: 100vh;
-  background-color: black;
-  overflow: auto;
+html,
+body {
+	height: 100vh;
+	background-color: black;
+	overflow: auto;
 }
 
 .episodes {
-
-  padding-top: 20px;
+	padding-top: 20px;
 }
 
-.streampage, .playbtnep {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;;
+.streampage,
+.playbtnep {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .episodestogglebtn {
-  justify-content: center;
-  height: 100px;
-  width: 100px;
-}
-
-.episodestogglebtn, .player {
-  animation: glowing 2000ms infinite;
-  display: flex;
-  align-items: center;
-  border-radius:5px;
-  border: black;
-  height: 80px;
-}
-@keyframes glowing {
-  0% {
-    background-color: #2ba805;
-    box-shadow: 0 0 3px #2ba805;
-  }
-  50% {
-    background-color: blue;
-    box-shadow: 0 0 10px blue;
-  }
-  100% {
-    background-color: #2ba805;
-    box-shadow: 0 0 3px #2ba805;
-}
+	justify-content: center;
+	height: 100px;
+	width: 100px;
 }
 
 .episodeContainer {
-  height: 100vh;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
+	height: 100vh;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
 }
-
 
 .play {
-  width: 20px;
-  height: 20px;
-  border-top: 28px solid transparent;
-  border-left: 32px solid #000;
-  border-bottom: 28px solid transparent;
-  padding-right: 10px;
+	width: 20px;
+	height: 20px;
+	border-top: 28px solid transparent;
+	border-left: 32px solid #000;
+	border-bottom: 28px solid transparent;
+	padding-right: 10px;
 }
 
-
 .title {
-  margin: 0;
-  color: black;
+	margin: 0;
+	color: black;
+}
+
+.episodestogglebtn,
+.player {
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	border: black;
+	height: 80px;
+	width: 220px;
+	border: none;
+	outline: none;
+	color: #fff;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+.episodestogglebtn:before,
+.player:before {
+	content: '';
+	background: linear-gradient(
+		45deg,
+		#ff0000,
+		#ff7300,
+		#fffb00,
+		#48ff00,
+		#00ffd5,
+		#002bff,
+		#7a00ff,
+		#ff00c8,
+		#ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.episodestogglebtn:active,
+.player:active {
+	color: #000;
+}
+
+.episodestogglebtn:active:after,
+.player:active:after {
+	background: transparent;
+}
+
+.episodestogglebtn:hover:before,
+.player:hover:before {
+	opacity: 1;
+}
+
+.episodestogglebtn:after,
+.player:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #111;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
