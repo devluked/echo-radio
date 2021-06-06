@@ -1,38 +1,78 @@
 .App {
-  text-align: center;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  height: 100vh;
+  background-color: black;
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.episodes {
+
+  padding-top: 20px;
+}
+
+.streampage, .playbtnep {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+}
+
+.episodestogglebtn {
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+}
+
+.episodestogglebtn, .player {
+  animation: glowing 2000ms infinite;
+  display: flex;
+  align-items: center;
+  border-radius:5px;
+  border: black;
+  height: 80px;
+}
+@keyframes glowing {
+  0% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
   }
+  50% {
+    background-color: blue;
+    box-shadow: 0 0 10px blue;
+  }
+  100% {
+    background-color: #2ba805;
+    box-shadow: 0 0 3px #2ba805;
+}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.episodeContainer {
+  height: 100vh;
+  background-color: black;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.play {
+  width: 20px;
+  height: 20px;
+  border-top: 28px solid transparent;
+  border-left: 32px solid #000;
+  border-bottom: 28px solid transparent;
+  padding-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.title {
+  margin: 0;
+  color: black;
 }
