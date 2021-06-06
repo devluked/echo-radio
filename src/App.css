@@ -34,7 +34,8 @@ body {
 }
 
 .stream h1 {
-	font-size: clamp(1rem, 2vw, 2vh);
+	padding-top: clamp(0.1rem, 0.3vw, 0.3vh);
+	font-size: clamp(0.75rem, 2vw, 2vh);
 	padding-left: clamp(0.5rem, 2vw, 2vh);
 }
 
