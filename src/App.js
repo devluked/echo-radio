@@ -7,6 +7,7 @@ const recentEp = "https://soundcloud.com/echoradioshow/echo-radio-008"
 function App() {
   return (
     <div className="App">
+      <TopBar/>
       <ToggleStreamEpisodes/>
    </div>
   );
@@ -22,14 +23,19 @@ function ToggleStreamEpisodes() {
   if (displayVar===false) {
     return (
       <div className="streampage">
-        <button className="episodestogglebtn" onClick={toggleViewHandler}>Episodes</button>
-        <StreamPlayer recentEp={recentEp}/>
+        <p className="live-text">LIVE NOW</p>
+        <div className="streampagebtns">
+          <StreamPlayer recentEp={recentEp}/>
+          {/* <button className="episodestogglebtn" onClick={toggleViewHandler}><h1 className="title">Episodes</h1></button> */}
+        </div>
+        
+
      </div>
     )
   } else 
   return (
     <div className="episodeContainer">
-      <button className="episodestogglebtn" onClick={toggleViewHandler}>Episodes</button>
+      <button className="episodestogglebtn" onClick={toggleViewHandler}><h1 className="title">Radio</h1></button>
       <EpisodesComponent title={"episode 8"} url="https://soundcloud.com/echoradioshow/echo-radio-008"/>
       <EpisodesComponent title={"episode 7"} url="https://soundcloud.com/echoradioshow/echo-radio-007"/>
       <EpisodesComponent title={"episode 6"} url="https://soundcloud.com/echoradioshow/echo-radio-006"/>
@@ -43,19 +49,20 @@ function ToggleStreamEpisodes() {
 }
 
 function StreamPlayer(props) {
-  const [isPlaying, togglePlaying] = useState(false)
-
-
-  const handlePlay = () => {
-    togglePlaying(!isPlaying)
-  }
-
   return (
   <div className="playbtnep">
-
     <EpisodesComponent title={"Echo Radio"} url={props.recentEp}/>
   </div>
   )}
+
+
+function TopBar() {
+  return (
+    <div className="top-bar">
+      <h1>ECHO RADIO</h1>
+    </div>
+  )
+}
 
 
 function EpisodesComponent(props) {
