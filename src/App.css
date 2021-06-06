@@ -15,40 +15,63 @@ body {
 
 .top-bar h1 {
 	color: white;
-	font-size: 50px;
+	font-size: clamp(2rem, 2vw, 2vh);
 }
 
 .top-bar {
-	width: 100%;
 	background-color: black;
 	display: flex;
 	justify-content: center;
 }
 
-.streampage {
+.streambar {
+	display: flex;
+	flex-direction: row;
 	align-items: center;
 	box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
 		rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
-	width: 100%;
-	height: 80px;
+	height: 40px;
 }
 
-.streampagebtns {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	flex-grow: 1;
-	justify-content: center;
+.stream h1 {
+	font-size: clamp(1rem, 2vw, 2vh);
+	padding-left: clamp(0.5rem, 2vw, 2vh);
 }
 
-.streampage,
-.playbtnep {
+.stream img {
+	height: clamp(1rem, 2vw, 2vh);
+	width: clamp(1rem, 2vw, 2vh);
+}
+
+.streambtn {
+	box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
+		rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 	display: flex;
 	flex-direction: row;
+	flex-grow: 4;
+	margin-right: 10px;
+}
+
+.stream-component,
+.streambar,
+.stream,
+.top-bar,
+.player {
+	width: 100%;
+}
+
+.text {
+	display: flex;
+	align-items: center;
+}
+
+.text p {
+	padding-top: clamp(0.75rem, 2vw, 2vh);
+	padding-left: 15px;
 }
 
 .live-text {
-	position: absolute;
+	font-size: clamp(0.75rem, 2vw, 2vh);
 }
 
 .episodes {
@@ -65,11 +88,11 @@ body {
 }
 
 .play {
-	width: 20px;
-	height: 20px;
-	border-top: 28px solid transparent;
-	border-left: 32px solid #000;
-	border-bottom: 28px solid transparent;
+	width: 5px;
+	height: 5px;
+	border-top: 13px solid transparent;
+	border-left: 17px solid black;
+	border-bottom: 13px solid transparent;
 	padding-right: 10px;
 }
 
@@ -78,15 +101,13 @@ body {
 	color: black;
 }
 
-.episodestogglebtn,
+/* Button glow */
 .player {
-	box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset,
-		rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 	display: flex;
 	align-items: center;
 	border: black;
-	height: 65px;
-	width: 100%;
+	height: 30px;
+	flex-grow: 4;
 	border: none;
 	outline: none;
 	color: #fff;
@@ -161,4 +182,35 @@ body {
 	100% {
 		background-position: 0 0;
 	}
+}
+
+/* Red Dot Animation */
+@keyframes up-right {
+	0% {
+		transform: scale(1);
+		opacity: 0.25;
+	}
+	50% {
+		transform: scale (1, 5);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0.25;
+	}
+}
+.circle {
+	margin-left: clamp(0.75rem, 2vw, 2vh);
+	margin-right: clamp(0.75rem, 2vw, 2vh);
+	border-radius: 50%;
+	width: clamp(0.2rem, 1.3vw, 1.3vh);
+	height: clamp(0.2rem, 1.3vw, 1.3vh);
+	opacity: 0.25;
+}
+.red {
+	background-color: red;
+	-webkit-animation: up-right 1s infinite;
+	-moz-animation: up-right 1s infinite;
+	-o-animation: up-right 1s infinite;
+	animation: up-right 1s infinite;
 }
