@@ -19,10 +19,42 @@ body {
 }
 
 .top-bar {
+	justify-content: flex-start;
 	background-color: black;
 	display: flex;
-	justify-content: center;
+	flex-direction: row;
 	position: sticky;
+	align-items: center;
+}
+
+.logo {
+	margin-top: clamp(0.75rem, 2vw, 2vh);
+	margin-bottom: clamp(0.75rem, 2vw, 2vh);
+	margin-right: auto;
+	margin-left: clamp(0.75rem, 3vw, 3vh);
+	border-radius: clamp(0.75rem, 0.7vw, 0.7vh);
+	flex: 0 1 auto;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: white;
+}
+
+.logo img {
+	height: clamp(0.75rem, 6vw, 6vh);
+	width: clamp(0.75rem, 6vw, 6vh);
+}
+
+.echo-text {
+	margin-left: clamp(0.75rem, 5vw, 5vh);
+	flex: 0 1 auto;
+	position: absolute;
+	right: 46%;
+	display: flex;
+}
+
+.echo-text h1 {
+	padding-left: clamp(0.75rem, 3vw, 3vh);
+	font-size: clamp(0.75rem, 3vw, 3vh);
 }
 
 .streambar {
@@ -75,6 +107,7 @@ body {
 
 .live-text {
 	font-size: clamp(0.75rem, 2vw, 2vh);
+	padding-bottom: 3px;
 }
 
 .episodes {
@@ -206,8 +239,8 @@ body {
 	margin-left: clamp(0.75rem, 2vw, 2vh);
 	margin-right: clamp(0.75rem, 2vw, 2vh);
 	border-radius: 50%;
-	width: clamp(0.2rem, 1.3vw, 1.3vh);
-	height: clamp(0.2rem, 1.3vw, 1.3vh);
+	width: clamp(0.2rem, 1vw, 1.1vh);
+	height: clamp(0.2rem, 1vw, 1.1vh);
 	opacity: 0.25;
 }
 .red {

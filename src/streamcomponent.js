@@ -17,36 +17,36 @@ class StreamComponent extends React.Component {
             isPlaying: false,
             url: props.url,
             title: props.title,
-            playTime: ((hours*119) + minutes + seconds)
+            playTime: (((hours*3600) + minutes*60 + seconds)%3600)
         }
         this.tick = this.tick.bind(this)
     }
 
     tick() {
+        let ticker = this.player.getDuration()/3600
         this.interval = setInterval(() => {
-            console.log(this.state.playTime)
             this.setState(prevState => ({
-                playTime: prevState.playTime + 1
+                playTime: prevState.playTime + ticker
             }))
         }, 1000)
     }
 
     handlePlay = () => {
-        console.log(date)
         this.setState({isPlaying: !(this.state.isPlaying)})
-        console.log(this.state.playTime/2855)
          if (this.state.isPlaying===false) {
             this.tick()
         }
       }
 
-
-    handleSeek = () => {
-        this.player.seekTo(this.state.playTime/2855)
+    handleEnd = () => {
+        console.log('end')
+        this.setState({playTime: 0.01, isPlaying: true})
     }
 
-    handleProgress = () => {
-        console.log('onProgress')
+
+    handleSeek = () => {
+        this.player.seekTo(this.state.playTime/this.player.getDuration())
+
     }
 
     ref = player => {
@@ -61,7 +61,7 @@ class StreamComponent extends React.Component {
               <img src="https://img.icons8.com/fluent-systems-regular/48/000000/play--v1.png"/>
               <h1 className="title">{this.state.title}</h1>
               </button>
-              <ReactPlayer onPlay={this.handleSeek} ref={this.ref} height="0" width="0" playing={this.state.isPlaying} url={this.state.url}></ReactPlayer>
+              <ReactPlayer onEnded={this.handleEnd} onPlay={this.handleSeek} ref={this.ref} height="0" width="0" playing={this.state.isPlaying} url={this.state.url}></ReactPlayer>
             </div>
           )
         }
