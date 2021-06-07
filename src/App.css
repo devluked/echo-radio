@@ -32,7 +32,6 @@ body {
 	margin-bottom: clamp(0.75rem, 2vw, 2vh);
 	margin-right: auto;
 	margin-left: clamp(0.75rem, 3vw, 3vh);
-	border-radius: clamp(0.75rem, 0.7vw, 0.7vh);
 	flex: 0 1 auto;
 	align-items: center;
 	justify-content: flex-start;
@@ -48,12 +47,11 @@ body {
 	margin-left: clamp(0.75rem, 5vw, 5vh);
 	flex: 0 1 auto;
 	position: absolute;
-	right: 46%;
+	right: 43%;
 	display: flex;
 }
 
 .echo-text h1 {
-	padding-left: clamp(0.75rem, 3vw, 3vh);
 	font-size: clamp(0.75rem, 3vw, 3vh);
 }
 

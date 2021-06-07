@@ -17,6 +17,7 @@ class StreamComponent extends React.Component {
             isPlaying: false,
             url: props.url,
             title: props.title,
+            seconds: 0,
             playTime: (((hours*3600) + minutes*60 + seconds)%3600)
         }
         this.tick = this.tick.bind(this)
@@ -26,13 +27,18 @@ class StreamComponent extends React.Component {
         let ticker = this.player.getDuration()/3600
         this.interval = setInterval(() => {
             this.setState(prevState => ({
-                playTime: prevState.playTime + ticker
+                seconds: prevState.seconds + ticker
             }))
         }, 1000)
     }
 
+    
+
     handlePlay = () => {
-        this.setState({isPlaying: !(this.state.isPlaying)})
+
+        console.log(this.state.playTime)
+        this.setState({isPlaying: !(this.state.isPlaying), playTime: this.state.playTime + this.state.seconds, seconds: 0})
+        clearInterval(this.interval)
          if (this.state.isPlaying===false) {
             this.tick()
         }
