@@ -1,4 +1,3 @@
-import {useState, useRef} from 'react'
 import React from 'react'
 import ReactPlayer from 'react-player'
 import './App.css';
@@ -33,6 +32,7 @@ class StreamComponent extends React.Component {
     }
 
     handlePlay = () => {
+        console.log(date)
         this.setState({isPlaying: !(this.state.isPlaying)})
         console.log(this.state.playTime/2855)
          if (this.state.isPlaying===false) {
