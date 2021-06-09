@@ -64,7 +64,7 @@ class StreamComponent extends React.Component {
             <div className="stream">
               <button className="player" onClick={this.handlePlay}>
               {/*<div className="play"></div>*/}
-              <img src="https://img.icons8.com/fluent-systems-regular/48/000000/play--v1.png"/>
+              <i class={this.state.isPlaying===false ? "play icon" : "stop icon"}/>
               <h1 className="title">{this.state.title}</h1>
               </button>
               <ReactPlayer controls={false} onEnded={this.handleEnd} onPlay={this.handleSeek} ref={this.ref} height="0" width="0" playing={this.state.isPlaying} url={this.state.url}></ReactPlayer>

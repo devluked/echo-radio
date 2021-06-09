@@ -24,7 +24,6 @@ function TopBar() {
          {isDropDown===true ? 
          <div className="drop-down">
           <a href="https://soundcloud.com/echoradioshow" rel="noreferrer" target="_blank"><i class="soundcloud icon"/></a>
-          <hr/>
           <a href="https://www.instagram.com/echoradioshow/" rel="noreferrer" target="_blank"><i class="instagram icon"/></a>
            </div>
         : ""}

@@ -123,14 +123,32 @@ body {
 	margin-right: 10px;
 }
 
+.player {
+	display: flex;
+	align-items: center;
+	border: black;
+	height: 30px;
+	flex-grow: 4;
+	border: none;
+	outline: none;
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+}
+
 .stream-component,
 .streambar,
 .stream,
 .top-bar,
 .player {
 	position: relative;
-
 	width: 100%;
+}
+
+.player i {
+	font-size: clamp(1rem, 2vw, 2vh);
+	margin-bottom: 1px;
 }
 
 .text {
@@ -161,35 +179,12 @@ body {
 	height: 100vh;
 }
 
-.play {
-	width: 5px;
-	height: 5px;
-	border-top: 13px solid transparent;
-	border-left: 17px solid black;
-	border-bottom: 13px solid transparent;
-	padding-right: 10px;
-}
-
 .title {
 	margin: 0;
 	color: black;
 }
 
 /* Button glow */
-.player {
-	display: flex;
-	align-items: center;
-	border: black;
-	height: 30px;
-	flex-grow: 4;
-	border: none;
-	outline: none;
-	color: #fff;
-	background: #111;
-	cursor: pointer;
-	position: relative;
-	z-index: 0;
-}
 
 .episodestogglebtn:before,
 .player:before {
