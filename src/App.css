@@ -61,7 +61,7 @@ body {
 }
 
 .ellipsis-btn {
-	font-size: clamp(1.5rem, 4vw, 4vh);
+	font-size: clamp(1.5rem, 3vw, 3vh);
 }
 
 .drop-down {
