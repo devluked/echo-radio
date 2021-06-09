@@ -27,9 +27,9 @@ class StreamComponent extends React.Component {
         let ticker = this.player.getDuration()/3600
         this.interval = setInterval(() => {
             this.setState(prevState => ({
-                seconds: prevState.seconds + ticker
+                seconds: prevState.seconds + ticker/100
             }))
-        }, 1000)
+        }, 10)
     }
 
     
@@ -67,7 +67,7 @@ class StreamComponent extends React.Component {
               <img src="https://img.icons8.com/fluent-systems-regular/48/000000/play--v1.png"/>
               <h1 className="title">{this.state.title}</h1>
               </button>
-              <ReactPlayer onEnded={this.handleEnd} onPlay={this.handleSeek} ref={this.ref} height="0" width="0" playing={this.state.isPlaying} url={this.state.url}></ReactPlayer>
+              <ReactPlayer controls={false} onEnded={this.handleEnd} onPlay={this.handleSeek} ref={this.ref} height="0" width="0" playing={this.state.isPlaying} url={this.state.url}></ReactPlayer>
             </div>
           )
         }

@@ -1,13 +1,34 @@
 import logo from './assets/echo-radio-logo.png'
+import text from './assets/echo-text.png'
+import {useState} from 'react'
 
 function TopBar() {
+  const [isDropDown, displayDropDown] = useState(false)
+
+  const handleDropDown = () => {
+    displayDropDown(!isDropDown)
+
+
+  }
     return (
       <div className="top-bar">
         <div className="logo">
-          <img height="60px" width="60px" src={logo}></img>
+          <img src={logo}></img>
         </div>
         <div className="echo-text">
-        <h1>ECHO RADIO</h1>
+          <img src={text}></img>
+        </div>
+        <div className="menu-icon">
+
+         <span className="ellipsis-btn" onClick={handleDropDown}><i className={isDropDown===false? "ellipsis horizontal icon" : "ellipsis vertical icon"}/></span>
+         {isDropDown===true ? 
+         <div className="drop-down">
+          <a href="https://soundcloud.com/echoradioshow" rel="noreferrer" target="_blank"><i class="soundcloud icon"/></a>
+          <hr/>
+          <a href="https://www.instagram.com/echoradioshow/" rel="noreferrer" target="_blank"><i class="instagram icon"/></a>
+           </div>
+        : ""}
+
         </div>
       </div>
     )
