@@ -4,14 +4,19 @@ import { useEffect, useState } from 'react';
 import { LiveDotText, TopBar } from './smallelements.js'
 import { Episodes } from './episodes'
 import StreamComponent from './streamcomponent.js'
+import Images from './slidingimgs.js'
 
 const recentEp = "https://soundcloud.com/echoradioshow/echo-radio-008"
 
 function App() {
   return (
     <div className="App">
-      <TopBar/>
-      <ToggleStreamEpisodes/>
+      <div className="top-components">
+        <TopBar/>
+        <ToggleStreamEpisodes/>
+      </div>
+        <Images/>
+
    </div>
   );
 }
