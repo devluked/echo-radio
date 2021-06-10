@@ -163,7 +163,7 @@ body {
 
 .live-text {
 	font-size: clamp(0.75rem, 2vw, 2vh);
-	padding-bottom: 3px;
+	padding-bottom: 1px;
 }
 
 .episodes {
@@ -272,8 +272,8 @@ body {
 	margin-left: clamp(0.75rem, 2vw, 2vh);
 	margin-right: clamp(0.75rem, 2vw, 2vh);
 	border-radius: 50%;
-	width: clamp(0.2rem, 1vw, 1.1vh);
-	height: clamp(0.2rem, 1vw, 1.1vh);
+	width: clamp(0.25rem, 1vw, 1.1vh);
+	height: clamp(0.3rem, 1vw, 1.1vh);
 	opacity: 0.25;
 }
 .red {
