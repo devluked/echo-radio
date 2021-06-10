@@ -13,10 +13,10 @@ function TopBar() {
     return (
       <div className="top-bar">
         <div className="logo">
-          <img src={logo}></img>
+          <img alt="" src={logo}></img>
         </div>
         <div className="echo-text">
-          <img src={text}></img>
+          <img alt="" src={text}></img>
         </div>
         <div className="menu-icon">
 

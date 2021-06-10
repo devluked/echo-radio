@@ -18,7 +18,7 @@ class StreamComponent extends React.Component {
             url: props.url,
             title: props.title,
             seconds: 0,
-            playTime: (((hours*3600) + minutes*60 + seconds)%3600)
+            playTime: (((hours*3600) + minutes*60 + seconds)%3610)
         }
         this.tick = this.tick.bind(this)
     }
@@ -30,9 +30,8 @@ class StreamComponent extends React.Component {
     tick() {
         let ticker = this.player.getDuration()/3600
         this.interval = setInterval(() => {
-            console.log(seconds)
             this.setState(prevState => ({
-                seconds: prevState.seconds + ticker/150
+                playTime: prevState.playTime + ticker/150
             }))
         }, 1)
     }
@@ -40,13 +39,12 @@ class StreamComponent extends React.Component {
     
 
     handlePlay = () => {
-
         console.log(this.state.playTime)
-        this.setState({isPlaying: !(this.state.isPlaying), playTime: this.state.playTime + this.state.seconds, seconds: 0})
-        clearInterval(this.interval)
-        console.log(this.state.seconds)
-        if (this.state.isPlaying===false) {
+        this.setState({isPlaying: !(this.state.isPlaying)})
+        if(this.state.isPlaying===false) {
             this.tick()
+        } else if (this.state.isPlaying===true) {
+        clearInterval(this.interval)
         }
       }
 
@@ -54,7 +52,6 @@ class StreamComponent extends React.Component {
 
     handleSeek = () => {
         this.player.seekTo(this.state.playTime/this.player.getDuration())
-
     }
 
     ref = player => {
@@ -65,7 +62,6 @@ class StreamComponent extends React.Component {
         return (
             <div className="stream">
               <button className="player" onClick={this.handlePlay}>
-              {/*<div className="play"></div>*/}
               <i class={this.state.isPlaying===false ? "play icon" : "stop icon"}/>
               <h1 className="title">{this.state.title}</h1>
               </button>
