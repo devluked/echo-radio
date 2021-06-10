@@ -23,6 +23,10 @@ class StreamComponent extends React.Component {
         this.tick = this.tick.bind(this)
     }
 
+    componentDidMount() {
+        this.tick()
+    }
+
     tick() {
         let ticker = this.player.getDuration()/3600
         this.interval = setInterval(() => {
