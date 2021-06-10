@@ -6,6 +6,7 @@ body {
 }
 
 .App {
+	overflow: hidden;
 	background-color: white;
 	height: 100vh;
 	display: flex;
@@ -181,9 +182,15 @@ body {
 	height: 100vh;
 	margin: 0 auto;
 	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .container {
+	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
 	background-color: black;
 	flex: 1;
 	display: flex;
