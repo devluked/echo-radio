@@ -187,10 +187,6 @@ body {
 }
 
 .container {
-	overflow: hidden;
-	overflow-x: hidden;
-	overflow-y: hidden;
-
 	background-color: black;
 	flex: 1;
 	display: flex;
@@ -214,7 +210,6 @@ body {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	overflow: hidden;
 }
 
 .container section {
