@@ -195,7 +195,7 @@ body {
 	height: 85vh;
 	position: relative;
 
-	animation: slide 70s ease-in-out infinite;
+	animation: slide 120s ease-in-out infinite;
 }
 
 .container section,
@@ -240,7 +240,7 @@ body {
 		left: -600%;
 	}
 	100% {
-		left: 0%;
+		left: -500%;
 	}
 }
 @-moz-keyframes slide {
@@ -292,7 +292,7 @@ body {
 		left: -600%;
 	}
 	100% {
-		left: 0%;
+		left: -500%;
 	}
 }
 @-o-keyframes slide {
@@ -318,32 +318,47 @@ body {
 		left: -600%;
 	}
 	100% {
-		left: 0%;
+		left: -500%;
 	}
 }
 @keyframes slide {
 	0% {
 		left: 0;
 	}
-	14.3% {
+	7.69% {
 		left: -100%;
 	}
-	28.6% {
+	15.38% {
 		left: -200%;
 	}
-	42.9% {
+	23.07% {
 		left: -300%;
 	}
-	57.2% {
+	30.77% {
 		left: -400%;
 	}
-	71.5% {
+	38.46% {
 		left: -500%;
 	}
-	85.8% {
+	46.15% {
 		left: -600%;
 	}
-	100% {
+	53.85% {
+		left: -500%;
+	}
+	61.54% {
+		left: -400%;
+	}
+	69.23% {
+		left: -300%;
+	}
+	76.92% {
+		left: -200%;
+	}
+	84.61% {
+		left: -100%;
+	}
+	92.30% {
 		left: 0%;
 	}
 }
